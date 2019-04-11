@@ -1,5 +1,23 @@
 @extends('layouts.app')
 
+@section('title')
+Evangelios
+@endsection
+
+@section('seo')
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!--SEO Facebook -->    
+    <meta property="og:title" content="Señor de la Misericordia">
+    <meta property="og:description" content="">
+    <meta property="fb:app_id" content=""/>  
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://senormisericordia.com/">
+    <meta property="og:image" content="http://senormisericordia.com/favicon.png">
+    <meta property=og:locale content="es_MX">
+@endsection
+
 @section('content')
 <main class="container section">
 	<h2 class="tinto-text center">Evangelios</h2>

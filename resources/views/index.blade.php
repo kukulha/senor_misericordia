@@ -1,5 +1,43 @@
 @extends('layouts.app')
 
+@section('title')
+Fiestas de Abril
+@endsection
+
+@section('seo')
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!--SEO Facebook -->    
+    <meta property="og:title" content="Señor de la Misericordia">
+    <meta property="og:description" content="">
+    <meta property="fb:app_id" content=""/>  
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://senormisericordia.com/">
+    <meta property="og:image" content="http://senormisericordia.com/favicon.png">
+    <meta property=og:locale content="es_MX">
+
+    <!--Schema.org-->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "Señor de la Misericordia",
+            "url": "http://www.senormisericordia.com",
+            "image": "http://senormisericordia.com/img/logo.png",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tepatitlán",
+                "addressRegion": "JC",
+                "postalCode": "47600",
+                "streetAddress": "Hidalgo #177"
+            },
+            "telephone": "+52 01 378 782 0700",
+            "priceRange": "0"
+        }
+    </script> 
+@endsection
+
 @section('content')
 <main>
     <div class="hero">
