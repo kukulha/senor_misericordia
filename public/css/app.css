@@ -9303,27 +9303,27 @@ nav .nav-wrapper ul li a {
 }
 
 .amarillo {
-  background: #f29222;
+  background: #f29222 !important;
 }
 
 .amarillo-text {
-  color: #f29222;
+  color: #f29222 !important;
 }
 
 .tinto {
-  background: #500f1f;
+  background: #500f1f !important;
 }
 
 .tinto-text {
-  color: #500f1f;
+  color: #500f1f !important;
 }
 
 .rojo {
-  background: #d21419;
+  background: #d21419 !important;
 }
 
 .rojo-text {
-  color: #d21419;
+  color: #d21419 !important;
 }
 
 .hero {
@@ -9367,5 +9367,10 @@ footer.admin {
   footer.admin {
     padding-left: 0;
   }
+}
+
+.ck-content {
+  min-height: 400px;
+  max-height: 400px;
 }
 

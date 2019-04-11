@@ -19,7 +19,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('id', 'DESC')->paginate();
+        $events = Event::orderBy('id', 'DESC')->paginate(10);
         return view('admin.events.index', compact('events'));
     }
 
@@ -30,7 +30,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.events.create');
     }
 
     /**
@@ -41,7 +41,12 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = Event::create($request->all());
+        if ($request->file('file')) {
+            $event->file = $request->file('file')->store('public');
+            $event->save();
+        }
+        return redirect()->route('events.index')->with('info', 'Evento creado exitosamente');
     }
 
     /**
@@ -63,7 +68,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::findOrFail($id);
+        return view('admin.events.edit', compact('event'));
     }
 
     /**
@@ -75,7 +81,13 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Event::findOrfail($id);
+        $event->fill($request->all())->save();
+        if ($request->file('file')) {
+            $event->file = $request->file('file')->store('public');
+            $event->save();
+        }
+        return redirect()->route('events.index')->with('info', 'Evento editado exitosamente');
     }
 
     /**
@@ -86,6 +98,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Event::findOrFail($id)->delete();
+        return redirect()->route('events.index')->with('info', 'Evento eliminado exitosamente');
     }
 }
