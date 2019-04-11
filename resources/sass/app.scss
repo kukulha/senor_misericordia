@@ -1,0 +1,104 @@
+//Normalize
+@import '~normalize.css/normalize';
+// Materialize
+@import '~materialize-css/dist/css/materialize.min';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Montserrat:400,700');
+*{
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size : 16px;
+}
+nav .nav-wrapper ul li a{
+	font-size : 20px !important;
+}
+.title{
+	text-transform: uppercase;
+}
+.small{
+	font-size: .8rem;
+}
+.cursiva{
+	font-family: 'Great Vibes', cursive;
+	font-size: 60px;
+	line-height: 60px;
+}
+.bold{
+	font-weight: 700;
+}
+//Colores
+.deg{
+	background: rgba(47,14,16,1);
+    background: -moz-linear-gradient(top, rgba(47,14,16,1) 0%, rgba(211,18,22,1) 97%, rgba(211,18,22,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(47,14,16,1)), color-stop(97%, rgba(211,18,22,1)), color-stop(100%, rgba(211,18,22,1)));
+    background: -webkit-linear-gradient(top, rgba(47,14,16,1) 0%, rgba(211,18,22,1) 97%, rgba(211,18,22,1) 100%);
+    background: -o-linear-gradient(top, rgba(47,14,16,1) 0%, rgba(211,18,22,1) 97%, rgba(211,18,22,1) 100%);
+    background: -ms-linear-gradient(top, rgba(47,14,16,1) 0%, rgba(211,18,22,1) 97%, rgba(211,18,22,1) 100%);
+    background: linear-gradient(to bottom, rgba(47,14,16,1) 0%, rgba(211,18,22,1) 97%, rgba(211,18,22,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f0e10', endColorstr='#d31216', GradientType=0 );
+}
+.transparente{
+    background : -moz-linear-gradient(137.79% 157.19% 120.76deg,rgba(211, 18, 22, 1) 0%,rgba(102, 15, 18, 1) 63.99%,rgba(47, 14, 16, 1) 98.58%);
+    background : -webkit-linear-gradient(120.76deg, rgba(211, 18, 22, 1) 0%, rgba(102, 15, 18, 1) 63.99%, rgba(47, 14, 16, 1) 98.58%);
+    background : -webkit-gradient(linear,137.79% 157.19% ,-4.95% -17.1% ,color-stop(0,rgba(211, 18, 22, 1) ),color-stop(0.6399,rgba(102, 15, 18, 1) ),color-stop(0.9858,rgba(47, 14, 16, 1) ));
+    background : -o-linear-gradient(120.76deg, rgba(211, 18, 22, 1) 0%, rgba(102, 15, 18, 1) 63.99%, rgba(47, 14, 16, 1) 98.58%);
+    background : -ms-linear-gradient(120.76deg, rgba(211, 18, 22, 1) 0%, rgba(102, 15, 18, 1) 63.99%, rgba(47, 14, 16, 1) 98.58%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#D31216', endColorstr='#2F0E10' ,GradientType=0)";
+    background : linear-gradient(-30.76deg, rgba(211, 18, 22, 1) 0%, rgba(102, 15, 18, 1) 63.99%, rgba(47, 14, 16, 1) 98.58%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D31216',endColorstr='#2F0E10' , GradientType=1);
+    opacity : 0.85;
+}
+.amarillo{
+	background: #f29222;
+}
+.amarillo-text{
+	color: #f29222;
+}
+.tinto{
+	background: #500f1f;
+}
+.tinto-text{
+	color: #500f1f;
+}
+.rojo{
+	background: #d21419;
+}
+.rojo-text{
+	color: #d21419;
+}
+//Fondos
+.hero{
+	background:  url('/img/hero.jpg') top left no-repeat;
+	background-size: cover;
+	background-attachment: cover;
+	height: 80vh;
+	width: 100vw;
+}
+//helpers
+hr{
+  border-style : Solid;
+  border-color : #500F1F;
+  border-color : rgba(80, 15, 31, 1);
+  border-width : 3px;
+}
+.icon{
+	display: inline-block;
+	padding: 15px;
+}
+.icon i{
+	font-size: 25px;
+	margin: 0 auto;
+}
+.valign-wrapper{
+	height: 80vh;
+}
+header.admin, main.admin, footer.admin {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header.admin, main.admin, footer.admin {
+        padding-left: 0;
+      }
+    }
