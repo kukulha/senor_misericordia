@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Event;
-use App\Http\Requests\EventStoreRequest;
-use App\Http\Requests\EventUpdateRequest;
+use App\Gospel;
+use App\Http\Requests\GospelStoreRequest;
+use App\Http\Requests\GospelUpdateRequest;
 
-class EventController extends Controller
+class GospelController extends Controller
 {
     public function __construct()
     {
@@ -21,8 +21,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('id', 'DESC')->paginate(10);
-        return view('admin.events.index', compact('events'));
+        $gospels = Gospel::orderBy('id', 'DESC')->paginate(10);
+        return view('admin.gospels.index', compact('gospels'));
     }
 
     /**
@@ -32,7 +32,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.events.create');
+        return view('admin.gospels.create');
     }
 
     /**
@@ -41,14 +41,14 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EventStoreRequest $request)
+    public function store(GospelStoreRequest $request)
     {
-        $event = Event::create($request->all());
+        $gospel = Gospel::create($request->all());
         if ($request->file('file')) {
-            $event->file = $request->file('file')->store('public');
-            $event->save();
+            $gospel->file = $request->file('file')->store('public');
+            $gospel->save();
         }
-        return redirect()->route('events.index')->with('info', 'Evento creado exitosamente');
+        return redirect()->route('gospels.index')->with('info', 'Evangelio creado exitosamente');
     }
 
     /**
@@ -70,8 +70,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::findOrFail($id);
-        return view('admin.events.edit', compact('event'));
+        $gospel = Gospel::findOrFail($id);
+        return view('admin.gospels.edit', compact('gospel'));
     }
 
     /**
@@ -81,15 +81,15 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EventUpdateRequest $request, $id)
+    public function update(GospelUpdateRequest $request, $id)
     {
-        $event = Event::findOrfail($id);
-        $event->fill($request->all())->save();
+        $gospel = Gospel::findOrfail($id);
+        $gospel->fill($request->all())->save();
         if ($request->file('file')) {
-            $event->file = $request->file('file')->store('public');
-            $event->save();
+            $gospel->file = $request->file('file')->store('public');
+            $gospel->save();
         }
-        return redirect()->route('events.index')->with('info', 'Evento editado exitosamente');
+        return redirect()->route('gospels.index')->with('info', 'Evangelio editado exitosamente');
     }
 
     /**
@@ -100,7 +100,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        Event::findOrFail($id)->delete();
-        return redirect()->route('events.index')->with('info', 'Evento eliminado exitosamente');
+        Gospel::findOrFail($id)->delete();
+        return redirect()->route('gospels.index')->with('info', 'Evangelio eliminado exitosamente');
     }
 }

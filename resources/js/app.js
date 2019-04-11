@@ -7,4 +7,7 @@ $(document).ready(function(){
     	fullWidth:true,
     	indicators:true
     });
+    $('.datepicker').datepicker({
+    	format: 'yyyy-mm-dd',
+    });
 });

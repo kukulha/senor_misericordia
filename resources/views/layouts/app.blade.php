@@ -29,9 +29,8 @@
                     <a href="{{ route('home') }}" class="brand-logo"><img src="/img/logo.png" width="150px" alt=""></a>
                     <a href="" class="sidenav-trigger" data-target="movil"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="amarillo-text" href="">Horarios</a></li>
                         <li><a class="amarillo-text" href="{{ route('events') }}">Eventos</a></li>
-                        <li><a class="amarillo-text" href="">Evangelios</a></li>
+                        <li><a class="amarillo-text" href="{{ route('gospels') }}">Evangelios</a></li>
                         @auth
                             <li><a href='{{ route('events.index') }}' class="amarillo-text">{{ Auth::user()->name }}</a></li>
                         @endauth
@@ -70,7 +69,7 @@
 
     @yield('content')
     
-    <footer class="page-footer deg">
+    <footer class="page-footer deg overflow">
         <div class="container">
             <div class="row">
                 <div class="col m4 s12 ">

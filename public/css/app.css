@@ -9374,3 +9374,7 @@ footer.admin {
   max-height: 400px;
 }
 
+.overflow {
+  overflow-y: hidden;
+}
+

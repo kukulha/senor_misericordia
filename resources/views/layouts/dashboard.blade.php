@@ -28,7 +28,7 @@
         </li>
         <li><a class="white-text titulo" href="{{ route('home') }}">Ver Página</a></li>
         <li><a class="white-text titulo" href="{{ route('events.index') }}">Eventos</a></li>
-        <li><a class="white-text titulo" href="">Evangelios</a></li>
+        <li><a class="white-text titulo" href="{{ route('gospels.index') }}">Evangelios</a></li>
         <li class="divider"></li>
         <li class="white-text titulo">
             <a class="white-text " href="#!" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>

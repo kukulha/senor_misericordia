@@ -8,7 +8,7 @@ $factory->define(Event::class, function (Faker $faker) {
     return [
         'name' => $title,
         'slug' => str_slug($title),
-        'file' => $faker->imageUrl($width = 1200, $height= 600),
+        'file' => $faker->imageUrl($width = 1200, $height= 400),
         'body' => $faker->realText(2500)
     ];
 });

@@ -64,5 +64,27 @@
                 <a href="{{ route('events') }}" class="btn red darken-2">Ver más</a>
             </div>
     </section>
+
+    <section class="section container">
+        <div class="center">
+            <hr>
+            <h3 class="amarillo-text title center">Evangelios</h3>
+            <hr>
+        </div>
+        <div class="row">
+            @foreach($gospels as $gospel)
+                <div class="col m4 s12">
+                    <div class="card">
+                    <div class="card-image">
+                        <img src="{{ $gospel->file }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <a href="{{ route('gospel', $gospel->slug) }}" class="tinto-text">{{ $gospel->name }}</p>
+                    </div>
+                </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
 </main>
 @endsection
